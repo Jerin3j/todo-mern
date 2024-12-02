@@ -10,7 +10,7 @@ export const CreateTodo = () => {
     e.preventDefault();
     try {
           console.log(text)
-         await axios.post('http://localhost:3001/create', {text})
+         await axios.post('https://todo-mern-qbio.onrender.com/create', {text})
           navigate('/')
         } catch (error) {
           console.log(error)

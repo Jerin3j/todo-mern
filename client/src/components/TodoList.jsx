@@ -12,7 +12,7 @@ export const TodoList = () => {
   
   useEffect(() => {
     const getTodos = async () => {
-      const todoDatas = await axios.get('http://localhost:3001/')
+      const todoDatas = await axios.get('https://todo-mern-qbio.onrender.com/')
        setTodos(todoDatas.data)
        console.log(todoDatas.data);
     }
@@ -25,7 +25,7 @@ export const TodoList = () => {
   }
 
   const onDelete = async (id) => {
-    await axios.delete(`http://localhost:3001/delete/${id}`)
+    await axios.delete(`https://todo-mern-qbio.onrender.com/delete/${id}`)
     .then(response =>{ 
       console.log(response)
       window.location.reload()
@@ -37,7 +37,7 @@ export const TodoList = () => {
   const setTodo = async () => {
     console.log(isEdit); 
     
-    await axios.put(`http://localhost:3001/edit/${isEdit}`, {editedTodo})
+    await axios.put(`https://todo-mern-qbio.onrender.com/edit/${isEdit}`, {editedTodo})
     .then((response)=> {
       console.log(response);
       setIsEdit()
